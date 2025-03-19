@@ -127,8 +127,8 @@ export default [
   {
     schoolName: "西湾小学（集团）海城小学",
     schoolClass: 4,
-    belongsText: "",
-    schoolType: "",
+    belongsText: "劳动路以南、宝源路以东、新安六路以北、宝安大道以西。",
+    schoolType: 1,
     schoolTel: "23069876",
     memo: "",
     educationType: 1,
@@ -235,8 +235,9 @@ export default [
   {
     schoolName: "新安中学(集团)外国语学校（小学部）",
     schoolClass: 8,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "（1）前进路以东，流塘路以北，宝安公园 - 铁岗水库以西（含山语华庭），平峦山公园以南；（2）九号公馆、曦城。",
+    schoolType: 1,
     schoolTel: "23215701",
     memo: "",
     educationType: 1,
@@ -248,8 +249,9 @@ export default [
   {
     schoolName: "南方科技大学附属中学宝安学校（小学部）",
     schoolClass: 5,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "（1）前进路以东，流塘路以北，宝安公园 - 铁岗水库以西（含山语华庭），平峦山公园以南；（2）九号公馆、曦城。",
+    schoolType: 1,
     schoolTel: "85909888,85909889",
     memo: "",
     educationType: 1,
@@ -275,8 +277,9 @@ export default [
   {
     schoolName: "西湾小学蘅芳校区（借址西乡小学）",
     schoolClass: 4,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "新安六路以北、西乡大道以南、宝安大道以西区域（劳动路以南、宝源路以东的区域和西乡河以南、宝源路以西的区域及海语西湾除外）。",
+    schoolType: "共享学区(可分享【海城小学、径贝小学】共享学区学位)",
     schoolTel: "27901662",
     memo: "",
     educationType: 1,
@@ -290,7 +293,7 @@ export default [
     schoolClass: 8,
     belongsText:
       "（1）73、74区中的金海华府、福安楼、佳华新村、招渝达物业、宝安新村；（2）75、76区中的富盈门、天骄世家、丽景城和御龙居。",
-    schoolType:0,
+    schoolType: 0,
     schoolTel: "27473214",
     memo: "分享【上合小学和孝德学校】或【凤岗小学、南方科技大学附属中学宝安学校（小学部）、新安中学集团外国语学校（小学部）】学位",
     educationType: 1,
@@ -331,8 +334,10 @@ export default [
   {
     schoolName: "航城学校南校区（小学部）",
     schoolClass: 6,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "宝安大道以东、107国道以西、固戍二路以北、三围工业路 - 果园路以南（含世纪车城）。",
+    schoolType:
+      "共享学区（可分享固戍小学或【钟屋小学、航盛小学】共享学区学位）",
     schoolTel: "27882185",
     memo: "",
     educationType: 1,
@@ -383,8 +388,8 @@ export default [
   {
     schoolName: "航盛小学（借址黄田学校）",
     schoolClass: 4,
-    belongsText: "",
-    schoolType: "",
+    belongsText: "钟屋社区、三围社区。",
+    schoolType: 1,
     schoolTel: "27775303",
     memo: "",
     educationType: 1,
@@ -409,8 +414,8 @@ export default [
   {
     schoolName: "利锦小学",
     schoolClass: 6,
-    belongsText: "",
-    schoolType: "",
+    belongsText: "黄田社区、后瑞社区、草围社区、鹤洲社区、利锦社区。",
+    schoolType: 1,
     schoolTel: "27225532",
     memo: "",
     educationType: 1,
@@ -435,8 +440,8 @@ export default [
   {
     schoolName: "百灵小学",
     schoolClass: 4,
-    belongsText: "",
-    schoolType: "",
+    belongsText: "黄麻布社区、九围社区所辖范围。",
+    schoolType: 1,
     schoolTel: "23056261",
     memo: "",
     educationType: 1,
@@ -462,8 +467,9 @@ export default [
   {
     schoolName: "中澳实验学校（小学部公办班）",
     schoolClass: 8,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "航城大道以南，107国道以东，西乡大道以北，前进二路以西延平峦山公园延伸至航城大道区域；鹤洲社区；桃源居。（中澳实验学校公办部根据委托办学协议优先录取第一志愿申请该校的桃源居购房户）。",
+    schoolType: 1,
     schoolTel: "26849932",
     memo: "",
     educationType: 1,
@@ -503,8 +509,9 @@ export default [
   {
     schoolName: "中澳实验学校（初中部公办班）",
     schoolClass: 10,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "航城大道以南，107国道以东，西乡大道以北，前进二路以西延平峦山公园延伸至航城大道区域；鹤洲社区；桃源居。（中澳实验学校公办部根据委托办学协议优先录取第一志愿申请该校的桃源居购房户）。107国道以东，新安四路--新安五路以北，前进二路以西，西乡大道以南的区域仅可报西乡实验学校（初中部）。",
+    schoolType: 1,
     schoolTel: "26849966转81201",
     educationType: 2,
     schoolBelongTo: 1,
@@ -571,8 +578,9 @@ export default [
   {
     schoolName: "航瑞中学",
     schoolClass: 10,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "（1）黄田社区、三围社区、草围社区、后瑞社区、钟屋社区、利锦社区、鹤洲社区；宝安大道以东，107国道以西，固戍二路以北的固兴社区范围；宝源路以东，航城大道以北，宝安大道以西，机场南路以南；（2）兴围社区、机场福永片区仅可报航瑞中学。",
+    schoolType: 1,
     schoolTel: "27778610",
     educationType: 2,
     schoolBelongTo: 1,
@@ -584,8 +592,9 @@ export default [
   {
     schoolName: "黄田学校（初中部）",
     schoolClass: 4,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "（1）黄田社区、三围社区、草围社区、后瑞社区、钟屋社区、利锦社区、鹤洲社区；宝安大道以东，107国道以西，固戍二路以北的固兴社区范围；宝源路以东，航城大道以北，宝安大道以西，机场南路以南；（2）兴围社区、机场福永片区仅可报航瑞中学。",
+    schoolType: 1,
     schoolTel: "29129558",
     educationType: 2,
     schoolBelongTo: 1,
@@ -624,8 +633,9 @@ export default [
   {
     schoolName: "南方科技大学附属中学宝安学校（初中部）",
     schoolClass: 4,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "前进路以东，流塘路--公园路--西乡大道--广深高速--上川路以北（含山语华庭），平峦山公园以南，宝石路-铁岗水库以西。",
+    schoolType: 1,
     schoolTel: "85909888,85909889",
     educationType: 2,
     schoolBelongTo: 1,
@@ -637,8 +647,9 @@ export default [
   {
     schoolName: "宝安中学（集团）实验学校（初中部）",
     schoolClass: 8,
-    belongsText: "",
-    schoolType: "",
+    belongsText:
+      "前进路以东，流塘路--公园路--西乡大道--广深高速--上川路以北（含山语华庭），平峦山公园以南，宝石路-铁岗水库以西。",
+    schoolType: 1,
     schoolTel: "27084669",
     educationType: 2,
     schoolBelongTo: 1,
