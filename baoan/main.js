@@ -88,6 +88,7 @@ polyEditor.on('end', function (data) {
 polyEditor.on('adjust', function (data) {
   // data.target._opts.path
   console.log(data);
+  console.log(`学区路径为：${data?.target?._opts?.path}`)
 })
 //在指定位置打开信息窗体
 function openModal(position, item) {
