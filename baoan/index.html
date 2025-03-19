@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>深圳市学区地图-宝安学区地图</title>
+    <script> 
+        window._AMapSecurityConfig = {
+            securityJsCode: '',
+        }
+    </script>
+    <link href="./style.css" type="text/css" rel="stylesheet"></link>
+</head>
+<body>
+<div id="container"></div>
+<div class="tools">
+    <input id="tipinput" placeholder="请输入关键字获取经纬度">
+    <input id="lnglat" placeholder="点击地图可以显示经纬度">
+    <button class="btn" onclick="polygonEditor.add()">新建学区</button>
+    <button class="btn" onclick="polygonEditor.editor.open()">编辑学区</button>
+    <button class="btn" onclick="polygonEditor.editor.close()">结束编辑</button>
+</div>
+<!--单个插件plugin=AMap.PolygonEditor；多个插件plugin=AMap.PolygonEditor,AMap.AutoComplete-->
+<script src="https://webapi.amap.com/maps?v=2.0&key=eb7c62a4eb3727460ec229f1b1e358d9&plugin=AMap.PolygonEditor,AMap.AutoComplete"></script>
+<script type="module">
+    import {polygonEditor} from './main.js';
+    window.polygonEditor = polygonEditor
+</script>
+</body>
+</html>
