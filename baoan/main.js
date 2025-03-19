@@ -1,8 +1,10 @@
 // 宝安区2024年秋季义务教育公办学校招生计划及招生范围: https://www.baoan.gov.cn/jyj/zwgk/zdly/zsxx/content/post_11398657.html
-// demo：https://lbs.amap.com/demo/javascript-api-v2/example/overlay-editor/polygon-editor-avoidpolygon
+// 宝安区2024年秋季小一初一新生报名公告: https://www.baoan.gov.cn/jyj/zwgk/zdly/zsxx/content/post_11322394.html
+// 多边形demo：https://lbs.amap.com/demo/javascript-api-v2/example/overlay-editor/polygon-editor-avoidpolygon
 // 坐标拾取：https://lbs.amap.com/demo/javascript-api-v2/example/map/click-to-get-lnglat
-// api: https://lbs.amap.com/api/javascript-api-v2/documentation#polygoneditor
-import {schoolData, schoolTypes, educationTypes, schoolBelongTo} from './data.js';
+// 多边形编辑器api: https://lbs.amap.com/api/javascript-api-v2/documentation#polygoneditor
+
+import {baSchoolsData, schoolTypes, educationTypes, schoolBelongTo} from './data.js';
 var map = new AMap.Map('container', {
   viewMode: '2D', // 默认使用 2D 模式，如果希望使用带有俯仰角的 3D 模式，请设置 viewMode: '3D'
   zoom:9, // 初始化地图层级
@@ -13,7 +15,7 @@ map.on('click', function(e) {
 });
 
 var mapsArray = []
-schoolData.forEach(item => {
+baSchoolsData.forEach(item => {
 var polygonArea = new AMap.Polygon({
   path: item.belongs,
   zIndex: 0,

@@ -1,3 +1,4 @@
+
 # 郑重提示
 
 > 此学区地图仅供参考，注意甄别，不能以此作为标准，有疑问请咨询对应教育局。
@@ -12,13 +13,18 @@
 
 # 数据来源
 
-## [https://www.baoan.gov.cn/jyj/zwgk/zdly/zsxx/content/post_11398657.html](宝安区2024年秋季义务教育公办学校招生计划及招生范围)
+## [宝安区2024年秋季义务教育公办学校招生计划及招生范围](https://www.baoan.gov.cn/jyj/zwgk/zdly/zsxx/content/post_11398657.html)
 
 ## 其他互联网整合
 
 # 数据误差
 
 > 不能保证100%正确，如有错误，请联系作者。
+>
+
+# 数据转换为json
+
+涉及数据比较多，善用AI帮忙处理，[宝安区2024年秋季小一初一新生报名公告](https://www.baoan.gov.cn/jyj/zwgk/zdly/zsxx/content/post_11322394.html)中的[附件1：宝安区2024年秋季义务教育公办学校招生计划及招生范围 .doc](https://www.baoan.gov.cn/attachment/1/1451/1451171/11322394.doc)
 
 # 最后说明
 
