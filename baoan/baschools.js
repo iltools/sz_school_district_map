@@ -12,11 +12,39 @@ import area3 from "./area/year24/area2.js";
 import area4 from "./area/year24/area2.js";
 import area5 from "./area/year24/area2.js";
 import area6 from "./area/year24/area2.js";
-export default [
-  // ...area1,
-  ...area2,
-  // ...area3,
-  // ...area4,
-  // ...area5,
-  // ...area6,
+
+var originSchoolData = [
+   // ...area1,
+   ...area2,
+   // ...area3,
+   // ...area4,
+   // ...area5,
+   // ...area6,
 ]
+var formatOriginSchoolData = originSchoolData.map(item => {
+  return {
+    ...item,
+    ...{
+      groupName: `${item.schoolBelongTo}_${item.educationType}_${item.belongsText}`,
+    }
+  }
+})
+var schoolsDataGroup = _.groupBy(formatOriginSchoolData, 'belongsText')
+var polygonSchoolPath = []
+for (const [key, value] of Object.entries(schoolsDataGroup)) {
+  polygonSchoolPath.push({
+    belongs: _.get(value, '0.belongs', []),
+    belongsText: _.get(value, '0.belongsText', ""),
+    groupName: _.get(value, '0.groupName', ""),
+  })
+}
+const allData = {
+  originSchoolData,
+  // 按组学区path
+  polygonSchoolPath,
+  formatOriginSchoolData
+}
+
+console.log(allData)
+
+export default allData
