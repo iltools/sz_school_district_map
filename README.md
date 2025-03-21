@@ -5,7 +5,7 @@
 
 # 使用说明
 
-## 线上Demo
+## [线上Demo](https://iltools.github.io/sz_school_district_map/baoan/index.html)
 
 ## 本地部署
 
@@ -19,7 +19,7 @@
 
 # 数据误差
 
-> 不能保证100%正确，如有错误，请联系作者。
+> 不能保证100%正确，特别是XX社区确定的学区范围注意甄别，如有错误，请联系作者。
 >
 
 # 数据转换为json
