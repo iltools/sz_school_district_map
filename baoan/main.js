@@ -47,7 +47,15 @@ function drawPolygon () {
       });
     });
     polygonArea.on("click", (data) => {
-      console.log(data, 'aaa')
+      console.log(data)
+      var groupName = data?.target?._opts?.extData?.groupName
+      var schools = formatOriginSchoolData.filter(item => item.groupName === groupName)
+      var school1 = schools.filter(item => item.educationType === 1)
+      var school2 = schools.filter(item => item.educationType === 2)
+      openAreaModal(new AMap.LngLat(data.lnglat.lng, data.lnglat.lat), {
+        school1: school1,
+        school2: school2,
+      })
     });
     mapsArray.push(polygonArea);
     // 绘制区域
@@ -122,7 +130,7 @@ function openModal(position, item) {
   var infoWindow = new AMap.InfoWindow({
     content: `
           <div class="openModal">
-              <h4 class='input-item'>学校名称: ${item.schoolName}</h4>
+              <h1 class="font-bold text-sky-900">学校名称: ${item.schoolName}</h1>
               <p class='input-item'>教育阶段: ${
                 educationTypes[item.educationType]
               }</p>
@@ -136,6 +144,22 @@ function openModal(position, item) {
               <p class='input-item'>招生班数: ${item.schoolClass}</p>
               <p class='input-item'>招生范围: ${item.belongsText}</p>
               <p class='input-item'>备注: ${item.memo}</p>
+          </div>
+      `,
+  });
+  // infoWindow.open(map, map.getCenter());
+  infoWindow.open(map, position);
+}
+
+function openAreaModal(position, item) {
+  var school1 = item.school1.map(item => item.schoolName)
+  var school2 = item.school2.map(item => item.schoolName)
+  var infoWindow = new AMap.InfoWindow({
+    content: `
+          <div class="openModal">
+              <h1 class="font-bold text-sky-900">该区域包含的学校</h1>
+              <div class="flex"><div class="shrink-0">小学：</div><div>${school1}</div></div>
+              <div class="flex"><div class="shrink-0">初中：</div><div>${school2}</div></div>
           </div>
       `,
   });
