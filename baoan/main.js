@@ -10,13 +10,15 @@ import {
   educationTypes,
   schoolBelongTo,
 } from "./data.js";
-const {polygonSchoolPath, originSchoolData, formatOriginSchoolData} = baSchoolsData
+const { polygonSchoolPath, originSchoolData, formatOriginSchoolData } =
+  baSchoolsData;
 var map = new AMap.Map("container", {
-  viewMode: "2D", // 默认使用 2D 模式，如果希望使用带有俯仰角的 3D 模式，请设置 viewMode: '3D'
+  viewMode: "3D", // 默认使用 2D 模式，如果希望使用带有俯仰角的 3D 模式，请设置 viewMode: '3D'
   zoom: 9, // 初始化地图层级
   center: [113.876639, 22.576052], // 初始化地图中心点
 });
-var polyEditor
+var polyEditor;
+var controlBar;
 map.on("click", function (e) {
   document.getElementById("lnglat").value =
     e.lnglat.getLng() + "," + e.lnglat.getLat();
@@ -24,14 +26,14 @@ map.on("click", function (e) {
 
 var mapsArray = [];
 
-function drawPolygon () {
+function drawPolygon() {
   polygonSchoolPath.forEach((item) => {
     var polygonArea = new AMap.Polygon({
       path: item.belongs,
       zIndex: 0,
       fillColor: "rgb(0, 178, 213)",
       fillOpacity: 0.1,
-      extData: item
+      extData: item,
     });
     polygonArea.on("mouseover", () => {
       polygonArea.setOptions({
@@ -46,24 +48,26 @@ function drawPolygon () {
         zIndex: 0,
       });
     });
-    polygonArea.on("click", (data) => {
-      console.log(data)
-      var groupName = data?.target?._opts?.extData?.groupName
-      var schools = formatOriginSchoolData.filter(item => item.groupName === groupName)
-      var school1 = schools.filter(item => item.educationType === 1)
-      var school2 = schools.filter(item => item.educationType === 2)
+    polygonArea.on("rightclick", (data) => {
+      console.log(data);
+      var groupName = data?.target?._opts?.extData?.groupName;
+      var schools = formatOriginSchoolData.filter(
+        (item) => item.groupName === groupName
+      );
+      var school1 = schools.filter((item) => item.educationType === 1);
+      var school2 = schools.filter((item) => item.educationType === 2);
       openAreaModal(new AMap.LngLat(data.lnglat.lng, data.lnglat.lat), {
         school1: school1,
         school2: school2,
-      })
+      });
     });
     mapsArray.push(polygonArea);
     // 绘制区域
     map.add([polygonArea]);
-  })
+  });
 }
 
-function drawPoint () {
+function drawPoint() {
   formatOriginSchoolData.forEach((item) => {
     // 绘制点
     const icon = new AMap.Icon({
@@ -90,7 +94,7 @@ function drawPoint () {
   });
 }
 
-function initPolygonEditor () {
+function initPolygonEditor() {
   // 编辑器功能
   polyEditor = new AMap.PolygonEditor(map);
   mapsArray.forEach((item) => {
@@ -124,13 +128,25 @@ function initPolygonEditor () {
   });
 }
 
+function initControlBar() {
+  // 指南针
+  controlBar = new AMap.ControlBar({
+    position: {
+      top: "10px",
+      right: "10px",
+    },
+  });
+  map.addControl(controlBar);
+}
 
 //在指定位置打开信息窗体
 function openModal(position, item) {
   var infoWindow = new AMap.InfoWindow({
     content: `
           <div class="openModal">
-              <h1 class="font-bold text-sky-900">学校名称: ${item.schoolName}</h1>
+              <h1 class="font-bold text-sky-900">学校名称: ${
+                item.schoolName
+              }</h1>
               <p class='input-item'>教育阶段: ${
                 educationTypes[item.educationType]
               }</p>
@@ -152,8 +168,8 @@ function openModal(position, item) {
 }
 
 function openAreaModal(position, item) {
-  var school1 = item.school1.map(item => item.schoolName)
-  var school2 = item.school2.map(item => item.schoolName)
+  var school1 = item.school1.map((item) => item.schoolName);
+  var school2 = item.school2.map((item) => item.schoolName);
   var infoWindow = new AMap.InfoWindow({
     content: `
           <div class="openModal">
@@ -167,7 +183,7 @@ function openAreaModal(position, item) {
   infoWindow.open(map, position);
 }
 
-function initAutoComplete () {
+function initAutoComplete() {
   // 模糊搜索
   var autoInfo = new AMap.AutoComplete({
     input: "tipinput",
@@ -178,13 +194,13 @@ function initAutoComplete () {
     document.getElementById("lnglat").value =
       obj?.poi?.location?.lng + "," + obj?.poi?.location?.lat;
   });
-
 }
 
 drawPolygon();
 drawPoint();
-initPolygonEditor()
-initAutoComplete()
+initPolygonEditor();
+initAutoComplete();
+initControlBar();
 
 map.setFitView();
 
