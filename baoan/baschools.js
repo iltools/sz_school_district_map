@@ -1,11 +1,3 @@
-/*
- * @Author: iltools 15387673@qq.com
- * @Date: 2025-03-19 10:38:10
- * @LastEditors: iltools 15387673@qq.com
- * @LastEditTime: 2025-03-24 15:46:39
- * @FilePath: \sz_school_district_map\baoan\baschools.js
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 // 数据根据ai生成
 // ！！步骤！！
 // 上传文档，未防止数据过多处理不过来，分区执行
