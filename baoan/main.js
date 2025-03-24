@@ -24,10 +24,35 @@ map.on("click", function (e) {
     e.lnglat.getLng() + "," + e.lnglat.getLat();
 });
 
-var mapsArray = [];
+var polygonArray = [];
+var markerArray = [];
+var getEducationType = 1
 
-function drawPolygon() {
-  polygonSchoolPath.forEach((item) => {
+function clearLayers() {
+  map.clearMap();
+  polyEditor.close();
+  polyEditor.clearAdsorbPolygons()
+}
+
+function initEducationTypeChange () {
+  document.getElementById("educationType").onchange = (e) => {
+    getEducationType = e?.target?.value || 1
+    // map.remove(markerArray);
+    // map.remove(polygonArray);
+    clearLayers()
+    drawPolygon({educationType: getEducationType})
+    drawPoint({educationType: getEducationType})
+    initPolygonEditor()
+  }
+}
+
+
+
+function drawPolygon(params = {}) {
+  const {educationType = 1} = params
+  var filterPolygonSchoolPath = educationType == -1 ? polygonSchoolPath : polygonSchoolPath.filter(item => item.educationType == educationType)
+  polygonArray = []
+  filterPolygonSchoolPath.forEach((item) => {
     var polygonArea = new AMap.Polygon({
       path: item.belongs,
       zIndex: 0,
@@ -39,6 +64,7 @@ function drawPolygon() {
       polygonArea.setOptions({
         fillOpacity: 0.8,
         fillColor: "rgb(248, 218, 218)",
+        zIndex: 999,
       });
     });
     polygonArea.on("mouseout", () => {
@@ -61,14 +87,17 @@ function drawPolygon() {
         school2: school2,
       });
     });
-    mapsArray.push(polygonArea);
+    polygonArray.push(polygonArea);
     // 绘制区域
     map.add([polygonArea]);
   });
 }
 
-function drawPoint() {
-  formatOriginSchoolData.forEach((item) => {
+function drawPoint(params = {}) {
+  const {educationType = 1} = params
+  var filterFormatOriginSchoolData =  educationType == -1 ? formatOriginSchoolData : formatOriginSchoolData.filter(item => item.educationType == educationType)
+  markerArray = []
+  filterFormatOriginSchoolData.forEach((item) => {
     // 绘制点
     const icon = new AMap.Icon({
       image:
@@ -82,6 +111,7 @@ function drawPoint() {
       position: new AMap.LngLat(item.longitude, item.latitude),
     });
     map.add(marker);
+    markerArray.push(marker)
     // 设置标注标签
     marker.setLabel({
       direction: "right",
@@ -97,7 +127,7 @@ function drawPoint() {
 function initPolygonEditor() {
   // 编辑器功能
   polyEditor = new AMap.PolygonEditor(map);
-  mapsArray.forEach((item) => {
+  polygonArray.forEach((item) => {
     polyEditor.addAdsorbPolygons(item);
     // 绑定事件， 双击编辑
     item.on("dblclick", () => {
@@ -196,11 +226,13 @@ function initAutoComplete() {
   });
 }
 
+initEducationTypeChange()
 drawPolygon();
 drawPoint();
 initPolygonEditor();
 initAutoComplete();
 initControlBar();
+
 
 map.setFitView();
 
