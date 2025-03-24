@@ -215,9 +215,10 @@ function openAreaModal(position, item) {
 
 function initAutoComplete() {
   // 模糊搜索
+  var cityId = document.getElementById("location").getAttribute("data-value")
   var autoInfo = new AMap.AutoComplete({
     input: "tipinput",
-    city: "440306", // 只在深圳市搜索
+    city: cityId, // 只在深圳市搜索
   });
   autoInfo.on("select", (obj) => {
     console.log(obj);
