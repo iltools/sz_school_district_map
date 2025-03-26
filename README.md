@@ -6,7 +6,7 @@
 
 ## [线上Demo](https://iltools.github.io/sz_school_district_map/baoan/index.html)
 
-## 本地部署
+## 本地部署 
 
 下载后，请启用服务运行本项目，如使用http-server
 
