@@ -2,7 +2,7 @@
 
 > 此学区地图仅供参考，注意甄别，不能以此作为标准，有疑问请咨询对应教育局。
 
-# 如何预览
+# 如何预览 
 
 ## [线上Demo](https://iltools.github.io/sz_school_district_map/baoan/index.html)
 
