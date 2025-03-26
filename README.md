@@ -1,3 +1,11 @@
+<!--
+ * @Author: iyou 15@qq.com
+ * @Date: 2025-03-20 20:32:30
+ * @LastEditors: iyou 15@qq.com
+ * @LastEditTime: 2025-03-26 21:37:01
+ * @FilePath: \sz_school_district_map\README.md
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
 # 郑重提示
 
 > 此学区地图仅供参考，注意甄别，不能以此作为标准，有疑问请咨询对应教育局。
@@ -14,7 +22,7 @@
 
 ## [宝安区2024年秋季义务教育公办学校招生计划及招生范围](https://www.baoan.gov.cn/jyj/zwgk/zdly/zsxx/content/post_11398657.html)
 
-## 个人理解+其他互联网整合
+## 个人理解+其他互联网整合 
 
 ## [深圳统一编码地址](http://www.szzlb.gov.cn/govmap/#/indexmap)
 
